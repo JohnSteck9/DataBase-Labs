@@ -1,7 +1,7 @@
 # 1) ----------------------------------------------------
 USE labor_sql;
 SELECT trip_no, town_from, town_to from labor_sql.trip
-where town_from != 'Rostov';
+where town_from != 'Rostov' and town_to != 'Rostov';
 
 # 2) ----------------------------------------------------
 SELECT *
