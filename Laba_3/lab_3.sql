@@ -204,7 +204,6 @@ ALTER TABLE salads_has_order_info
 
 #==================================================================
 
-
 insert into salads (id, name, ingredients, price, weight) values (1, 'Cuphea aspera Chapm.', 'Cook''s tree boa', '68.17', 175);
 insert into salads (id, name, ingredients, price, weight) values (2, 'Dicranodontium asperulum (Mitt.) Broth.', 'White-lipped peccary', '78.69', 238);
 insert into salads (id, name, ingredients, price, weight) values (3, 'Adenophorus oahuensis (Copeland) Bishop', 'Lion, california sea', '47.53', 113);
@@ -315,8 +314,6 @@ insert into order_info (id, additional_info, price_product, prise_delivery, pris
 insert into order_info (id, additional_info, price_product, prise_delivery, prise_total, expected_time, actual_time, delivery_area_id, order_status_id, customer_id, courier_id) values (8, 'Choloepus hoffmani', 467, 43, 510, '11:17', '0:04', 8, 8, 8, 8);
 insert into order_info (id, additional_info, price_product, prise_delivery, prise_total, expected_time, actual_time, delivery_area_id, order_status_id, customer_id, courier_id) values (9, 'Aegypius occipitalis', 503, 29, 532, '6:05', '6:04', 9, 9, 9, 9);
 insert into order_info (id, additional_info, price_product, prise_delivery, prise_total, expected_time, actual_time, delivery_area_id, order_status_id, customer_id, courier_id) values (10, 'Spermophilus armatus', 2, 36, 38, '9:38', '21:19', 10, 10, 10, 10);
-
-
 
 insert into pizza_has_order_info (pizza_id, order_info_id, quantity) values (1, 1, 5);
 insert into pizza_has_order_info (pizza_id, order_info_id, quantity) values (2, 2, null);
