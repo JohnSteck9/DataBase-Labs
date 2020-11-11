@@ -2,7 +2,7 @@
 USE labor_sql;
 SELECT trip_no, town_from, town_to from labor_sql.trip
 where town_from != 'Rostov' and town_to != 'Rostov';
-
+ 
 # 2) ----------------------------------------------------
 SELECT *
 FROM battles
@@ -41,10 +41,10 @@ ON trip.trip_no = pass_in_trip.trip_no AND town_from = 'London'
 GROUP BY date
 ORDER BY date;
 
-# -----CHECK------------------------------------------
-SELECT town_from, date
-FROM trip JOIN pass_in_trip
-ON trip.trip_no = pass_in_trip.trip_no AND town_from = 'London';
+## ------CHECK------------------------------------------
+# SELECT town_from, date
+# FROM trip JOIN pass_in_trip
+# ON trip.trip_no = pass_in_trip.trip_no AND town_from = 'London';
 
 # 8) ----------------------------------------------------
 SELECT DISTINCT ships.name, classes.displacement, classes.numGuns
