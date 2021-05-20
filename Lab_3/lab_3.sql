@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS student_project;
-USE student_project;
+CREATE DATABASE IF NOT EXISTS pizza_project;
+USE pizza_project;
 #DELIMITER //
 #//
 #DELIMITER ;
@@ -13,13 +13,13 @@ DROP TABLE IF EXISTS delivery_area;
 DROP TABLE IF EXISTS drink;
 DROP TABLE IF EXISTS drink_has_order_info; 
 
-DROP TABLE IF EXISTS menu;
 DROP TABLE IF EXISTS order_info;
 DROP TABLE IF EXISTS order_status;
 
 DROP TABLE IF EXISTS pizza;
-DROP TABLE IF EXISTS pizza_additions;
-DROP TABLE IF EXISTS pizza_additions_has_pizza_has_order_info;
+DROP TABLE IF EXISTS size;
+DROP TABLE IF EXISTS ingradients;
+DROP TABLE IF EXISTS pizza_has_ingradients;
 DROP TABLE IF EXISTS pizza_has_order_info;
 
 DROP TABLE IF EXISTS salads;
@@ -30,7 +30,7 @@ CREATE TABLE courier (
 id INT AUTO_INCREMENT NOT NULL,
 first_name VARCHAR(45) NOT NULL,
 last_name VARCHAR(45) NOT NULL,
-surname VARCHAR(45) NULL,
+surname VARCHAR(45) NOT NULL,
 phone VARCHAR(45) NOT NULL,
 email VARCHAR(100) NULL,
 courier_status_id INT NOT NULL,
@@ -57,14 +57,14 @@ PRIMARY KEY (id)
 CREATE TABLE delivery_area (
 id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
 zone VARCHAR(45) NOT NULL,
-delivery_time VARCHAR(45) NULL
+delivery_time DATETIME NULL
 ) ENGINE = INNODB;
 
 CREATE TABLE drink (
 id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
 name VARCHAR(45) NOT NULL,
-prise DECIMAL(10,2) NOT NULL,
-liter VARCHAR(45) NOT NULL
+prise DECIMAL(5,2) NOT NULL,
+liter DECIMAL(5,2) NOT NULL
 ) ENGINE = INNODB;
 
 CREATE TABLE drink_has_order_info (
@@ -74,19 +74,15 @@ quantity INT NULL,
 PRIMARY KEY (drink_id, order_info_id)
 ) ENGINE = INNODB;
 
-CREATE TABLE menu (
-id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-menu_item VARCHAR(45) NOT NULL
-) ENGINE = INNODB;
 
 CREATE TABLE order_info (
 id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-additional_info VARCHAR(255) NOT NULL,
-price_product DECIMAL(10,2) NOT NULL,
-prise_delivery DECIMAL(10,2) NOT NULL,
-prise_total DECIMAL(10,2) NOT NULL,
-expected_time VARCHAR(45) NULL,
-actual_time VARCHAR(45) NULL,
+order_comment VARCHAR(255) NULL,
+price_product DECIMAL(5,2) NOT NULL,
+prise_delivery DECIMAL(5,2) NOT NULL,
+prise_total DECIMAL(5,2) NOT NULL,
+expected_time DATETIME NULL,
+actual_time DATETIME NULL,
 delivery_area_id INT NOT NULL,
 order_status_id INT NOT NULL,
 customer_id INT NOT NULL,
@@ -102,26 +98,31 @@ name VARCHAR(100) NOT NULL
 CREATE TABLE pizza (
 id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
 name VARCHAR(45) NOT NULL UNIQUE,
-ingredients VARCHAR(45) NOT NULL,
-price DECIMAL(10,2) NOT NULL,
-size VARCHAR(45) NOT NULL,
+price DECIMAL(5,2) NOT NULL,
 weight VARCHAR(45) NOT NULL
+
+# ingredients VARCHAR(45) NOT NULL,
+# size VARCHAR(45) NOT NULL,
 ) ENGINE = INNODB;
 
-CREATE TABLE pizza_additions (
+CREATE TABLE size (
 id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-name VARCHAR(255) NOT NULL UNIQUE,
-price DECIMAL(10,2) NOT NULL,
-weight VARCHAR(45) NOT NULL
+name VARCHAR(45) NOT NULL UNIQUE,
+diameter_cm INT NOT NULL,
+pizza_id INT NOT NULL
 ) ENGINE = INNODB;
 
-CREATE TABLE pizza_additions_has_pizza_has_order_info (
-pizza_additions_id INT NOT NULL,
-pizza_has_order_info_pizza_id INT NOT NULL,
-pizza_has_order_info_order_info_id INT NOT NULL,
-PRIMARY KEY (pizza_additions_id, 
-				pizza_has_order_info_pizza_id, 
-				pizza_has_order_info_order_info_id)
+CREATE TABLE ingradients (
+id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+name VARCHAR(100) NOT NULL UNIQUE
+# price DECIMAL(10,2) NOT NULL,
+# weight VARCHAR(45) NOT NULL
+) ENGINE = INNODB;
+
+CREATE TABLE pizza_has_ingradients (
+pizza_id INT NOT NULL,
+ingradients_id INT NOT NULL,
+PRIMARY KEY (pizza_id, ingradients_id)
 ) ENGINE = INNODB;
 
 CREATE TABLE pizza_has_order_info (
@@ -135,8 +136,8 @@ CREATE TABLE salads (
 id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
 name VARCHAR(45) NOT NULL UNIQUE,
 ingredients VARCHAR(45) NOT NULL,
-price DECIMAL(10,2) NOT NULL,
-weight VARCHAR(45) NOT NULL
+price DECIMAL(5,2) NOT NULL,
+weight INT NOT NULL
 ) ENGINE = INNODB;
 
 CREATE TABLE salads_has_order_info (
