@@ -54,11 +54,6 @@ public class OrderInfoEntity {
                            Integer deliveryAreaId, Integer orderStatusId, Integer customerId, Integer courierId
     ) {
         this.id = id;
-//        this.deliveryArea = deliveryArea;
-//        this.orderStatus = orderStatus;
-//        this.customer = customer;
-//        this.courier = courier;
-
         this.comment = comment;
         this.priceProduct = priceProduct;
         this.priceDelivery = priceDelivery;
@@ -169,27 +164,6 @@ public class OrderInfoEntity {
         this.actualTime = actualTime;
     }
 
-//    public Integer getDeliveryAreaId() {
-//        return deliveryAreaId;
-//    }
-//    public void setDeliveryAreaId(Integer deliveryAreaId) { this.deliveryAreaId = deliveryAreaId; }
-//
-//    public Integer getOrderStatusId() {
-//        return orderStatusId;
-//    }
-//    public void setOrderStatusId(Integer orderStatusId) { this.orderStatusId = orderStatusId; }
-//
-//    public Integer getCustomerId() {
-//        return customerId;
-//    }
-//    public void setCustomerId(Integer customerId) { this.customerId = customerId; }
-//
-//    public Integer getCourierId() {
-//        return courierId;
-//    }
-//    public void setCourierId(Integer courierId) { this.courierId = courierId; }
-
-
 
     @Override
     public boolean equals(Object o) {
@@ -211,17 +185,12 @@ public class OrderInfoEntity {
                 && priceDelivery.equals(orderInfo.priceDelivery)
                 && expectedTime.equals(orderInfo.expectedTime)
                 && actualTime.equals(orderInfo.actualTime);
-//                && deliveryAreaId.equals(orderInfo.deliveryAreaId)
-//                && orderStatusId.equals(orderInfo.orderStatusId)
-//                && customerId.equals(orderInfo.customerId)
-//                && courierId.equals(orderInfo.courierId);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id, deliveryArea, orderStatus, customer, courier,
                 comment, priceProduct, priceDelivery, expectedTime, actualTime
-//                deliveryAreaId, orderStatusId, customerId, courierId
         );
     }
 
@@ -238,14 +207,6 @@ public class OrderInfoEntity {
                 ", priceDelivery=" + priceDelivery +
                 ", expectedTime='" + expectedTime + '\'' +
                 ", actualTime='" + actualTime + '\'' +
-//                ", deliveryAreaId=" + deliveryAreaId +
-//                ", orderStatusId=" + orderStatusId +
-//                ", customerId=" + customerId +
-//                ", courierId=" + courierId +
-//                ", deliveryAreas=" + deliveryAreas +
-//                ", orderStatuses=" + orderStatuses +
-//                ", customers=" + customers +
-//                ", couriers=" + couriers +
                 '}';
     }
 }

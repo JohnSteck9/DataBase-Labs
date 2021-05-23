@@ -18,8 +18,6 @@
         <mapping class="com.pizza.model.entity.DeliveryAreaEntity"/>
         <mapping class="com.pizza.model.entity.OrderInfoEntity"/>
         <mapping class="com.pizza.model.entity.OrderStatusEntity"/>
-        <!-- <property name="connection.username"/> -->
-        <!-- <property name="connection.password"/> -->
 
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->

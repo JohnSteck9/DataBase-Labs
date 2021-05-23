@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,8 +64,7 @@ public class CourierController {
     // параметр consumes - кажемо, що POST в нас хаває дані теж в форматі JSON
     @RequestMapping(method = RequestMethod.POST, consumes = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<Void> create(@RequestBody CourierEntity newCourier) {
-        // а тут DTOшок вже не буде, бо нам ж треба в базу зберегти нормальний об'єкт,
-        // а не DTO, правда?
+        // а тут DTOшок вже не буде, бо нам ж треба в базу зберегти нормальний об'єкт, а не DTO
 
         courierService.create(newCourier);
         return new ResponseEntity<>(HttpStatus.CREATED);

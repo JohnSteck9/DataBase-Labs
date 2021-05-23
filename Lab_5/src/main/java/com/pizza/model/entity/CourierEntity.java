@@ -39,7 +39,6 @@ public class CourierEntity {
         this.lastName = lastName;
         this.phone = phone;
         this.email = email;
-//        this.courierStatusId = courierStatusId;
         this.orderInfos = orderInfos;
     }
 
@@ -146,7 +145,6 @@ public class CourierEntity {
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
                 ", courierStatusId=" + courierStatusId +
-//                ", orderInfo=" + orderInfo +
                 '}';
     }
 }

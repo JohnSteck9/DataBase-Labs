@@ -19,7 +19,7 @@ public class CourierEntity {
     private String phone;
     @Column(name = "email")
     private String email;
-    @Column(name = "courier_status_id", nullable=false)
+    @Column(name = "courier_status_id")
     private Integer courierStatusId;
 
     @ManyToOne
@@ -110,12 +110,6 @@ public class CourierEntity {
     public void setCourierStatusId(int courierStatusId) {
         this.courierStatusId = courierStatusId;
     }
-//    public Set<OrderInfoEntity> getOrderInfos() {
-//        return orderInfos;
-//    }
-//    public void setOrderInfos(Set<OrderInfoEntity> orderInfos) {
-//        this.orderInfos = orderInfos;
-//    }
 
 
     @Override

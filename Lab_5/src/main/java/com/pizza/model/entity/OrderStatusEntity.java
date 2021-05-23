@@ -82,7 +82,6 @@ public class OrderStatusEntity {
         return "OrderStatusEntity{" +
                 "id=" + id +
                 ", status='" + status + '\'' +
-//                ", courier=" + courier +
                 '}';
     }
 }

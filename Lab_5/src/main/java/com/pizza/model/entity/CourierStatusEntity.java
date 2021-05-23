@@ -82,7 +82,6 @@ public class CourierStatusEntity {
         return "CourierStatusEntity{" +
                 "id=" + id +
                 ", status='" + status + '\'' +
-//                ", courier=" + couriers +
                 '}';
     }
 }

@@ -2,7 +2,6 @@ package com.pizza.dto;
 
 
 public class CourierDTO {
-
     private Integer id;
     private String firstName;
     private String lastName;

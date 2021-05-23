@@ -21,8 +21,8 @@ import java.util.List;
 @Configuration
 public class SwaggerConfiguration {
   private static final String title = "Spring Project";
-  private static final String description = "Lab 5";
-  private static final String LICENSE_TEXT = "(ㆆ_ㆆ)";
+  private static final String description = "Lab 6";
+  private static final String LICENSE_TEXT = "LICENSE_TEXT";
   private static final String SWAGGER_API_VERSION = "1.0";
 
   @Bean

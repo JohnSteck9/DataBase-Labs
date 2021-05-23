@@ -101,7 +101,6 @@ public class DeliveryAreaEntity {
                 "id=" + id +
                 ", zone='" + zone + '\'' +
                 ", time='" + time + '\'' +
-//                ", courier=" + courier +
                 '}';
     }
 }

@@ -5,7 +5,7 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name = "courier_status", schema = "pizza_project", catalog = "")
+@Table(name = "courier_status", schema = "pizza_project")
 public class CourierStatusEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
