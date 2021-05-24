@@ -74,7 +74,7 @@ PRIMARY KEY (drink_id, order_info_id)
 
 CREATE TABLE order_info (
 id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-order_comment VARCHAR(255) NULL,
+comment VARCHAR(255) NULL,
 price_product DECIMAL(10, 2) NOT NULL,
 price_delivery DECIMAL(10, 2) NOT NULL,
 expected_time VARCHAR(50) NULL,
@@ -378,16 +378,16 @@ insert into courier (id, first_name, last_name, phone, email, courier_status_id)
 insert into courier (id, first_name, last_name, phone, email) values (9, 'Curcio', 'D''Ambrogi', '304-931-4618', 'cdambrogi8@macromedia.com');
 insert into courier (id, first_name, last_name, phone, email) values (10, 'Tarah', 'Slott', '497-915-4406', 'tslott9@bbc.co.uk');
 
-insert into order_info (id, order_comment, price_product, price_delivery, delivery_area_id, order_status_id, customer_id, courier_id) values (1, 'Uraeginthus granatina', 360, 50, 1, 1, 1, 1);
-insert into order_info (id, order_comment, price_product, price_delivery, delivery_area_id, order_status_id, customer_id, courier_id) values (2, 'Bubulcus ibis', 964, 44, 2, 2, 2, 2);
-insert into order_info (id, order_comment, price_product, price_delivery, delivery_area_id, order_status_id, customer_id, courier_id) values (3, 'Eumetopias jubatus', 1913.00, 60, 3, 3, 3, 3);
-insert into order_info (id, order_comment, price_product, price_delivery, delivery_area_id, order_status_id, customer_id, courier_id) values (4, 'Thamnolaea cinnmomeiventris', 2632, 84, 4, 4, 4, 4);
-insert into order_info (id, order_comment, price_product, price_delivery, delivery_area_id, order_status_id, customer_id, courier_id) values (5, 'Neophron percnopterus', 326, 31, 5, 5, 5, 5);
-insert into order_info (id, order_comment, price_product, price_delivery, delivery_area_id, order_status_id, customer_id, courier_id) values (6, 'Bison bison', 1654, 68, 6, 6, 6, 6);
-insert into order_info (id, order_comment, price_product, price_delivery, delivery_area_id, order_status_id, customer_id, courier_id) values (7, 'Phasianus colchicus', 1733, 72, 7, 7, 7, 7);
-insert into order_info (id, order_comment, price_product, price_delivery, delivery_area_id, order_status_id, customer_id, courier_id) values (8, 'Choloepus hoffmani', 467, 43, 8, 8, 8, 8);
-insert into order_info (id, order_comment, price_product, price_delivery, delivery_area_id, order_status_id, customer_id, courier_id) values (9, 'Aegypius occipitalis', 503, 29, 9, 9, 9, 9);
-insert into order_info (id, order_comment, price_product, price_delivery, delivery_area_id, order_status_id, customer_id, courier_id) values (10, 'Spermophilus armatus', 2, 36, 10, 10, 10, 10);
+insert into order_info (id, comment, price_product, price_delivery, delivery_area_id, order_status_id, customer_id, courier_id) values (1, 'Uraeginthus granatina', 360, 50, 1, 1, 1, 1);
+insert into order_info (id, comment, price_product, price_delivery, delivery_area_id, order_status_id, customer_id, courier_id) values (2, 'Bubulcus ibis', 964, 44, 2, 2, 2, 2);
+insert into order_info (id, comment, price_product, price_delivery, delivery_area_id, order_status_id, customer_id, courier_id) values (3, 'Eumetopias jubatus', 1913.00, 60, 3, 3, 3, 3);
+insert into order_info (id, comment, price_product, price_delivery, delivery_area_id, order_status_id, customer_id, courier_id) values (4, 'Thamnolaea cinnmomeiventris', 2632, 84, 4, 4, 4, 4);
+insert into order_info (id, comment, price_product, price_delivery, delivery_area_id, order_status_id, customer_id, courier_id) values (5, 'Neophron percnopterus', 326, 31, 5, 5, 5, 5);
+insert into order_info (id, comment, price_product, price_delivery, delivery_area_id, order_status_id, customer_id, courier_id) values (6, 'Bison bison', 1654, 68, 6, 6, 6, 6);
+insert into order_info (id, comment, price_product, price_delivery, delivery_area_id, order_status_id, customer_id, courier_id) values (7, 'Phasianus colchicus', 1733, 72, 7, 7, 7, 7);
+insert into order_info (id, comment, price_product, price_delivery, delivery_area_id, order_status_id, customer_id, courier_id) values (8, 'Choloepus hoffmani', 467, 43, 8, 8, 8, 8);
+insert into order_info (id, comment, price_product, price_delivery, delivery_area_id, order_status_id, customer_id, courier_id) values (9, 'Aegypius occipitalis', 503, 29, 9, 9, 9, 9);
+insert into order_info (id, comment, price_product, price_delivery, delivery_area_id, order_status_id, customer_id, courier_id) values (10, 'Spermophilus armatus', 2, 36, 10, 10, 10, 10);
 
 insert into pizza_has_order_info (pizza_id, order_info_id, quantity) values (1, 1, 5);
 insert into pizza_has_order_info (pizza_id, order_info_id, quantity) values (2, 2, null);

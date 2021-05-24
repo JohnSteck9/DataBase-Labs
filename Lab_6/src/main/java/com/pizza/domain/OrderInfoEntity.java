@@ -11,7 +11,7 @@ public class OrderInfoEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
-    @Column(name = "order_comment")
+    @Column(name = "comment")
     private String comment;
     @Column(name = "price_product")
     private Double priceProduct;
@@ -49,15 +49,10 @@ public class OrderInfoEntity {
 
 
     public OrderInfoEntity(Integer id,
-//                           DeliveryAreaEntity deliveryArea, OrderStatusEntity orderStatus, CustomerEntity customer, CourierEntity courier,
                            String comment, Double priceProduct, Double priceDelivery, String expectedTime, String actualTime,
                            Integer deliveryAreaId, Integer orderStatusId, Integer customerId, Integer courierId
     ) {
         this.id = id;
-//        this.deliveryArea = deliveryArea;
-//        this.orderStatus = orderStatus;
-//        this.customer = customer;
-//        this.courier = courier;
         this.comment = comment;
         this.priceProduct = priceProduct;
         this.priceDelivery = priceDelivery;
@@ -70,7 +65,6 @@ public class OrderInfoEntity {
     }
 
     public OrderInfoEntity(
-//            DeliveryAreaEntity deliveryArea, OrderStatusEntity orderStatus, CustomerEntity customer, CourierEntity courier,
                            String comment, Double priceProduct, Double priceDelivery, String expectedTime, String actualTime,
                          Integer deliveryAreaId, Integer orderStatusId, Integer customerId, Integer courierId
     ) {
@@ -87,22 +81,6 @@ public class OrderInfoEntity {
 
     }
 
-    public OrderInfoEntity(String comment, Double priceProduct, Double priceDelivery, String expectedTime, String actualTime) {
-        this.comment = comment;
-        this.priceProduct = priceProduct;
-        this.priceDelivery = priceDelivery;
-        this.expectedTime = expectedTime;
-        this.actualTime = actualTime;
-    }
-
-    public OrderInfoEntity(Integer id, String comment, Double priceProduct, Double priceDelivery, String expectedTime, String actualTime) {
-        this.id = id;
-        this.comment = comment;
-        this.priceProduct = priceProduct;
-        this.priceDelivery = priceDelivery;
-        this.expectedTime = expectedTime;
-        this.actualTime = actualTime;
-    }
 
     public OrderInfoEntity() {
     }
@@ -114,38 +92,10 @@ public class OrderInfoEntity {
         this.id = id;
     }
 
-//    public DeliveryAreaEntity getDeliveryArea() {
-//        return deliveryArea;
-//    }
-//    public void setDeliveryArea(DeliveryAreaEntity deliveryArea) {
-//        this.deliveryArea = deliveryArea;
-//    }
-//
-//    public OrderStatusEntity getOrderStatus() {
-//        return orderStatus;
-//    }
-//    public void setOrderStatus(OrderStatusEntity orderStatus) {
-//        this.orderStatus = orderStatus;
-//    }
-//
-//    public CustomerEntity getCustomer() {
-//        return customer;
-//    }
-//    public void setCustomer(CustomerEntity customer) {
-//        this.customer = customer;
-//    }
-//
-//    public CourierEntity getCourier() {
-//        return courier;
-//    }
-//    public void setCourier(CourierEntity courier) {
-//        this.courier = courier;
-//    }
-
     public String getComment() {
         return comment;
     }
-    public void setComment(String orderComment) {
+    public void setComment(String comment) {
         this.comment = comment;
     }
 
@@ -209,26 +159,21 @@ public class OrderInfoEntity {
         }
         OrderInfoEntity orderInfo = (OrderInfoEntity) o;
         return id.equals(orderInfo.id)
-                && deliveryArea.equals(orderInfo.deliveryArea)
-                && orderStatus.equals(orderInfo.orderStatus)
-                && customer.equals(orderInfo.customer)
-                && courier.equals(orderInfo.courier)
-
                 && comment.equals(orderInfo.comment)
                 && priceProduct.equals(orderInfo.priceProduct)
                 && priceDelivery.equals(orderInfo.priceDelivery)
                 && expectedTime.equals(orderInfo.expectedTime)
-                && actualTime.equals(orderInfo.actualTime);
-//                && deliveryAreaId.equals(orderInfo.deliveryAreaId)
-//                && orderStatusId.equals(orderInfo.orderStatusId)
-//                && customerId.equals(orderInfo.customerId)
-//                && courierId.equals(orderInfo.courierId);
+                && actualTime.equals(orderInfo.actualTime)
+
+                && deliveryAreaId.equals(orderInfo.deliveryAreaId)
+                && orderStatusId.equals(orderInfo.orderStatusId)
+                && customerId.equals(orderInfo.customerId)
+                && courierId.equals(orderInfo.courierId);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id,
-//                deliveryArea, orderStatus, customer, courier,
                 comment, priceProduct, priceDelivery, expectedTime, actualTime,
                 deliveryAreaId, orderStatusId, customerId, courierId
         );
@@ -238,10 +183,6 @@ public class OrderInfoEntity {
     public String toString() {
         return "OrderInfoEntity{" +
                 "id=" + id +
-//                ", deliveryAreaId='" + deliveryArea.getId() + '\'' +
-//                ", orderStatusId='" + orderStatus.getId() + '\'' +
-//                ", customerId='" + customer.getId() + '\'' +
-//                ", courierId='" + courier.getId() + '\'' +
                 ", comment='" + comment + '\'' +
                 ", priceProduct=" + priceProduct +
                 ", priceDelivery=" + priceDelivery +
@@ -251,10 +192,6 @@ public class OrderInfoEntity {
                 ", orderStatusId=" + orderStatusId +
                 ", customerId=" + customerId +
                 ", courierId=" + courierId +
-//                ", deliveryAreas=" + deliveryAreas +
-//                ", orderStatuses=" + orderStatuses +
-//                ", customers=" + customers +
-//                ", couriers=" + couriers +
                 '}';
     }
 }
